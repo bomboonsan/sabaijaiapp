@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+html {
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+.policyMockup {
+    img {
+        @apply w-full h-auto;
+    }
+}
+
+@import './layouts/confirm.scss';
+@import './components/input.scss';
+@import './education/index.scss';
+@import './education/form.scss';
+

@@ -1,0 +1,6 @@
+.educationIcon {
+    @apply w-[250px] h-[250px] inline-flex flex-col items-center justify-center text-2xl font-medium bg-[#ef3026] text-white rounded-lg shadow-lg;
+    img {
+        @apply w-[120px] h-auto mx-auto mb-5;
+    }
+}

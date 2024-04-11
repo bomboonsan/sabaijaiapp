@@ -1,0 +1,36 @@
+.educationBtn {
+    cursor: pointer;
+    @apply inline-flex justify-center items-center;
+    @apply bg-[#ef3026] text-white p-4 py-6 text-lg rounded-lg shadow min-w-[300px];
+}
+.educationColor-disable {
+    cursor: pointer;
+    @apply inline-flex justify-center items-center;
+    @apply bg-[#ef3026]/20 text-white p-4 py-6 text-lg rounded-lg shadow min-w-[300px];
+}
+
+.education-form {
+    @apply text-black w-full flex flex-col gap-3;
+
+    input , select , textarea {
+        @apply text-black rounded-lg border border-gray-300 px-2 py-0.5;
+    }
+    label {
+        @apply block mb-0 pb-0;
+    }
+}
+.btn-apply-status {
+    @apply inline-flex justify-center items-center px-4 py-1 rounded-lg;
+}
+.btn-status-0 {
+    @apply bg-[#d9d9d9] text-white;
+}
+.btn-status-1 {
+    @apply bg-[#0d99ff] text-white;
+}
+.btn-status-2 {
+    @apply bg-[#2e51a2] text-white;
+}
+.btn-status-3 {
+    @apply bg-[#f28a3f] text-white;
+}

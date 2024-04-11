@@ -1,0 +1,19 @@
+.input-citizenid {
+    @apply bg-white border-2 border-neutral-600/40 shadow-xl shadow-neutral-500/10;
+    @apply mx-auto w-full max-w-[80%] block my-5;
+    @apply p-3  rounded-xl text-center text-lg;
+}
+
+.btn-submit {
+    @apply inline-flex justify-center items-center bg-[#f21b10] text-white text-xl min-w-[200px] p-2 rounded-lg shadow;
+}
+.btn-submit-disabled {
+    @apply inline-flex justify-center items-center bg-[#f21b10]/40 text-white/40 text-xl min-w-[200px] p-2 rounded-lg shadow;
+}
+
+.educationBtn {
+    @apply inline-flex justify-center items-center bg-[#ef3026] text-white text-xl min-w-[250px] w-auto p-2 rounded-lg shadow;
+}
+.disabled {
+    @apply bg-[#f21b10]/40 text-white/40;
+}

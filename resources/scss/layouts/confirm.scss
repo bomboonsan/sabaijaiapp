@@ -1,0 +1,20 @@
+.app_wrapper {
+    @apply flex justify-center items-center min-h-screen;
+    @apply p-5 md:py-6 text-[#334795] bg-[#f6e8e8];
+}
+
+.frontLayout {
+    font-family: "Noto Sans Thai", sans-serif;
+    @apply bg-white shadow-xl shadow-neutral-500/10;
+    @apply max-w-screen-sm mx-auto w-full;
+    @apply p-4 py-10 md:py-12 md:px-20 rounded-xl;
+    // min-height: calc(100vh - 56px);
+    // @apply min-h-24 md:min-h-[calc(100vh-56px)];
+}
+
+.logo {
+    @apply m-auto;
+    @apply mb-5;
+    @apply h-32;
+    @apply w-auto;
+}
