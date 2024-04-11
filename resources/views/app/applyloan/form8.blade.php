@@ -57,7 +57,32 @@
                         </span>
                     </div>
 
-                    <h2 class="text-2xl font-medium text-educationColor text-center mb-5 text-[#ef3026]">
+                    <div class="pt-2 pb-1">
+                        <hr />
+                    </div>
+
+                    <div>
+                        <label for="doc_credit">
+                            หนังสือให้ความยินยอมในการเปิดเผยข้อมูลเครดิต <br/>
+                            <span class="text-[.8rem] font-light">
+                                **ต้องลงนามแล้วและเป็นฉบับเดียวกันกับที่ส่งมอบให้มหาวิทยาลัยเท่านั้น**
+                            </span>
+
+                        </label>
+                        <input
+                        accept="image/*,.pdf,.csv"
+                        type="file"
+                        name="doc_credit"
+                        id="doc_credit"
+                        class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
+                            file:bg-gray-50 file:border-0
+                            file:me-4
+                            file:py-2 file:px-4
+                            dark:file:bg-gray-700 dark:file:text-gray-400"
+                        >
+                    </div>
+
+                    <h2 class="text-2xl font-medium text-educationColor text-center mt-10 mb-5 text-[#ef3026]">
                         เอกสารประกอบการขอสินเชื่อ
                         ของนิสิต/นักศึกษา
                     </h2>

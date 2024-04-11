@@ -77,7 +77,7 @@
                             {{ $modalUser->gender }} {{ $modalUser->first_name }} {{ $modalUser->last_name }}
                         </p>
                         <p>
-                            <a href="#" class="text-red-600 hover:text-red-700 font-medium">แก้ไขข้อมูลลูกค้า</a>
+                            <a href="{{ route('backend-user-show', $modalUser->id) }}" class="text-red-600 hover:text-red-700 font-medium">แก้ไขข้อมูลลูกค้า</a>
                         </p>
                         <p>
                             <a href="#" class="text-red-600 hover:text-red-700 font-medium">แนบเอกสารเพิ่มเติม</a>
@@ -131,97 +131,31 @@
             {{--  --}}
             <div class="w-full p-5 bg-white shadow-md whitespace-normal">
                 <h3 class="text-3xl font-bold text-black mb-3">ใส่ข้อมูลสำหรับออกสัญญากู้ยืม</h3>
-                <h4 class="text-xl font-semibold text-black mb-2">สัญญาที่ 1</h4>
                 <form wire:submit="updateApplyData({{ $modalUser->id }})">
-                    <div class="grid grid-cols-3 gap-5">
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">เลขที่สัญญา</label>
-                            <input
-                                value="{{ $modalUser->apply_id }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                            {{-- <input type="text" wire:model="new_apply_id"> --}}
+
+                    <div class="grid grid-cols-2 gap-4">
+                        @php
+                        $count = 0;
+                        $max = 8;
+                        @endphp
+                        @for ($i = 1; $i <= $max; $i++)
+                        <div>
+                            <h4 class="text-lg font-semibold text-black mb-1">สัญญาที่ {{ $i }}</h4>
+                            <label class="block mb-5">
+                                <span class="sr-only">Choose profile photo</span>
+                                <input type="file" class="block w-full text-sm text-gray-500
+                                file:me-4 file:py-2 file:px-4
+                                file:rounded-lg file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-blue-600 file:text-white
+                                hover:file:bg-blue-700
+                                file:disabled:opacity-50 file:disabled:pointer-events-none
+                                dark:file:bg-blue-500
+                                dark:hover:file:bg-blue-400
+                                ">
+                            </label>
                         </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">วันที่ทำสัญญา</label>
-                            <input
-                                value="{{ $modalUser->created_at->format('d/m/Y') }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ชั้นปีที่</label>
-                            <input
-                                value="{{ $modalUser->education_lavel_year }}"
-                                type="number"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ปีการศึกษา</label>
-                            <input
-                                value="{{ $modalUser->education_year }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ภาคการศึกษา</label>
-                            <input
-                                value="{{ $modalUser->education_sublevel }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ยอดกู้</label>
-                            <input
-                                value="{{ $modalUser->amount }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ดอกเบี้ยโปรโมชั่น(%)</label>
-                            <input
-                                value="{{ $modalUser->promotional_interest }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">ค่าธรรมเนียม(%)</label>
-                            <input
-                                value="{{ $modalUser->normal_interest }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">จำนวนงวด</label>
-                            <input
-                                value="{{ $modalUser->number_installments }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">วันที่ชำระงวดแรก</label>
-                            <input
-                                value="{{ $pay_date }}"
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
-                        <div class="box">
-                            <label for="" class="mb-1 text-sm text-neutral-800 px-2">วันที่ชำระงวดสอง</label>
-                            <input
-                                type="text"
-                                class="w-full border border-neutral-500/60 rounded-xl px-3 py-1 text-neutral-600"
-                            >
-                        </div>
+                        @endfor
                     </div>
 
                     <div class="flex flex-wrap gap-5 mt-5">

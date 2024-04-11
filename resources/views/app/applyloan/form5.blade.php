@@ -51,11 +51,130 @@
                         <select id="nature_employment" class="w-full" name="nature_employment" required>
                             <option value="">เลือก</option>
                             <option value="1" @if(isset($data['nature_employment']) && $data['nature_employment'] == '1') selected @endif>ข้าราชการ</option>
-                            <option value="2" @if(isset($data['nature_employment']) && $data['nature_employment'] == '2') selected @endif>งานส่วนตัว นายจ้าง</option>
-                            <option value="3" @if(isset($data['nature_employment']) && $data['nature_employment'] == '3') selected @endif>ผู้มีงานทำอื่นๆ</option>
-                            <option value="4" @if(isset($data['nature_employment']) && $data['nature_employment'] == '4') selected @endif>ผู้เกษียณที่ไม่ได้รับบำนาญ</option>
+                            <option value="2" @if(isset($data['nature_employment']) && $data['nature_employment'] == '2') selected @endif>พนักงานราชการ และลูกจ้างประจำอื่นๆของรัฐ</option>
+                            <option value="3" @if(isset($data['nature_employment']) && $data['nature_employment'] == '3') selected @endif>ลูกจ้างชั่วคราว ของรัฐ</option>
+                            <option value="4" @if(isset($data['nature_employment']) && $data['nature_employment'] == '4') selected @endif>ลูกจ้างประจำของรัฐวิสาหกิจและหน่วยงานที่เกี่ยวข้องกับภาครัฐ</option>
+                            <option value="5" @if(isset($data['nature_employment']) && $data['nature_employment'] == '5') selected @endif>ลูกจ้างชั่วคราวของรัฐวิสาหกิจและหน่วยงานที่เกี่ยวข้องกับภาครัฐ</option>
+                            <option value="6" @if(isset($data['nature_employment']) && $data['nature_employment'] == '6') selected @endif>ลูกจ้างประจำของเอกชน</option>
+                            <option value="7" @if(isset($data['nature_employment']) && $data['nature_employment'] == '7') selected @endif>ลูกจ้างชั่วคราวของเอกชน</option>
+                            <option value="8" @if(isset($data['nature_employment']) && $data['nature_employment'] == '8') selected @endif>งานส่วนตัว นายจ้าง</option>
+                            <option value="9" @if(isset($data['nature_employment']) && $data['nature_employment'] == '9') selected @endif>งานส่วนตัว ผู้ประกอบธุรกิจของตัวเอง</option>
+                            <option value="10" @if(isset($data['nature_employment']) && $data['nature_employment'] == '10') selected @endif>งานส่วนตัว สมาชิกของการรวมกลุ่มผู้ผลิต</option>
+                            <option value="11" @if(isset($data['nature_employment']) && $data['nature_employment'] == '11') selected @endif>งานส่วนตัว ผู้ช่วยธุรกิจในครัวเรือน</option>
+                            <option value="12" @if(isset($data['nature_employment']) && $data['nature_employment'] == '12') selected @endif>ผู้มีงานทำอื่นๆ</option>
+                            <option value="13" @if(isset($data['nature_employment']) && $data['nature_employment'] == '13') selected @endif>ผู้ว่างงาน</option>
+                            <option value="14" @if(isset($data['nature_employment']) && $data['nature_employment'] == '14') selected @endif>ทำงานบ้าน</option>
+                            <option value="15" @if(isset($data['nature_employment']) && $data['nature_employment'] == '15') selected @endif>เรียนหนังสือ</option>
+                            <option value="16" @if(isset($data['nature_employment']) && $data['nature_employment'] == '16') selected @endif>ผู้เกษียณรับบำนาญ</option>
+                            <option value="17" @if(isset($data['nature_employment']) && $data['nature_employment'] == '17') selected @endif>ผู้เกษียณที่ไม่ได้รับบำนาญ</option>
+                            <option value="18" @if(isset($data['nature_employment']) && $data['nature_employment'] == '18') selected @endif>ผู้ที่ไม่อยู่ในกำลังแรงงานอื่นๆ</option>
                         </select>
                     </div>
+
+                    <script>
+                        document.getElementById("main_occupation").addEventListener("input", function() {
+                            var mainOccupationValue = this.value;
+                            var natureEmploymentSelect = document.getElementById("nature_employment");
+
+                            // // ล้างตัวเลือกทั้งหมดใน dropdown list "ลักษณะการจ้างงาน"
+                            // natureEmploymentSelect.innerHTML = "<option value=''>เลือก</option>";
+
+                            // เลือกตัวเลือกที่ต้องการให้แสดงโดยใช้ค่าจาก dropdown list "อาชีพหลัก"
+                            switch (mainOccupationValue) {
+                                case '1':
+                                    selectsOption(['8'])
+                                    break;
+                                case '2':
+                                    selectsOption(['9'])
+                                    break;
+                                case '3':
+                                    selectsOption(['10'])
+                                    break;
+                                case '4':
+                                    selectsOption(['11'])
+                                    break;
+                                case '5':
+                                    selectsOption(['16'])
+                                    break;
+                                case '6':
+                                    selectsOption(null)
+                                    break;
+                                case '7':
+                                    selectsOption(['1'])
+                                    break;
+                                case '8':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7', '9', '10', '11'])
+                                    break;
+                                case '9':
+                                    selectsOption(['1'])
+                                    break;
+                                case '10':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '11':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7', '9', '10', '11'])
+                                    break;
+                                case '12':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '13':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '14':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7', '9', '10', '11'])
+                                    break;
+                                case '15':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '16':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '17':
+                                    selectsOption(['1', '2', '3', '4', '5', '6', '7'])
+                                    break;
+                                case '18':
+                                    selectsOption(['12'])
+                                    break;
+                                case '19':
+                                    selectsOption(['12'])
+                                    break;
+                                case '20':
+                                    selectsOption(['17'])
+                                    break;
+                                case '21':
+                                    selectsOption(null)
+                                    break;
+                                default:
+                                    selectsOption(null)
+                                    break;
+                            }
+                        });
+
+
+                        function selectsOption(selectOptions) {
+                            var natureEmploymentSelect = document.getElementById("nature_employment");
+
+                            // บังคับให้ dropdown list "nature_employment" มีค่าเป็น ""
+                            natureEmploymentSelect.value = "";
+
+                            // ล้างคลาส hidden ทั้งหมดในตัวเลือก
+                            for (var i = 0; i < natureEmploymentSelect.options.length; i++) {
+                                var option = natureEmploymentSelect.options[i];
+                                option.classList.remove("hidden");
+                            }
+
+                            // ตรวจสอบค่า selectOptions ว่ามีค่าหรือไม่
+                            if (selectOptions != null) {
+                                // ลบคลาส hidden จากตัวเลือกที่ไม่ตรงกับ selectOptions
+                                for (var i = 0; i < natureEmploymentSelect.options.length; i++) {
+                                    var option = natureEmploymentSelect.options[i];
+                                    if (selectOptions.indexOf(option.value) === -1) {
+                                        option.classList.add("hidden");
+                                    }
+                                }
+                            }
+                        }
+                    </script>
 
                     <div>
                         <label htmlFor="type_business">ประเภทธุรกิจขององค์กรหรือหน่วยงานที่ทำงานอยู่</label>
@@ -84,7 +203,7 @@
 
                     <div>
                         <label htmlFor="additional_career">อาชีพเสริม (ถ้ามี)</label>
-                        <select id="additional_career" class="w-full" name="additional_career" required>
+                        <select id="additional_career" class="w-full" name="additional_career">
                             <option value="">เลือก</option>
                             <option value="1" @if(isset($data['additional_career']) && $data['additional_career'] == '1') selected @endif>เจ้าของธุรกิจที่มีลูกจ้าง</option>
                             <option value="2" @if(isset($data['additional_career']) && $data['additional_career'] == '2') selected @endif>เจ้าของธุรกิจที่ไม่มีลูกจ้าง หรือ อาชีพอิสระ</option>
@@ -133,7 +252,7 @@
                     <div>
                         <label htmlFor="debt_burden_per_month">ภาระหนี้สินรวมต่อเดือน</label>
                         <div id="debt_burden_per_month" class="flex gap-3">
-                            <input class="flex-1" type="number" name="debt_burden_per_month" @if(isset($data['debt_burden_per_month'])) value="{{ $data['debt_burden_per_month'] }}" @endif />
+                            <input class="flex-1" type="number" name="debt_burden_per_month" @if(isset($data['debt_burden_per_month'])) value="{{ $data['debt_burden_per_month'] }}" @endif required />
                         </div>
                     </div>
 
@@ -174,5 +293,6 @@
             </div>
         </x-layouts.applyloan>
         <script src="{{ asset('js/preline.js') }}"></script>
+        <script></script>
     </body>
 </html>

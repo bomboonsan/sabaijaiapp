@@ -34,10 +34,13 @@
                         <p>
                             คุณรับทราบและยอมรับข้อตกลงและเงื่อนไขสำหรับการให้สินเชื่อส่วนบุคคลและการใช้บริการกับสบายใจมันนี่
                         </p>
-                        <div class="flex gap-7 mt-2">
+                        <div class="flex gap-7 mt-2 justify-between">
                             <div class="inline-flex">
                                 <input type="radio" name="tc_1" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-red-600 focus:ring-red-500" id="accept-1" @if(isset($data['tc_1']) && $data['tc_1'] == 'on') checked @endif>
-                                <label for="accept-1" class="text-bold font-medium ml-2" data-hs-overlay="#hs-small-modal">ยอมรับ</label>
+                                <label for="accept-1" class="text-bold font-medium ml-2">ยอมรับ</label>
+                            </div>
+                            <div class="inline-flex">
+                                <label for="accept-1" class="text-bold font-medium ml-2 text-blue-500" data-hs-overlay="#hs-small-modal">อ่านเพิ่มเติม กดที่นี่ >></label>
                             </div>
                         </div>
                     </div>

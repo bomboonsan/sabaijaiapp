@@ -23,32 +23,32 @@
                     <div>
                         <label htmlFor="address">บ้านเลขที่/ชื่อหมู่บ้าน-คอนโด/ถนน</label>
                         <div class="flex gap-3">
-                            <input class="flex-1" type="text" name="address" id="address" @if(isset($data['address'])) value="{{ $data['address'] }}" @endif />
+                            <input class="flex-1" type="text" name="address" id="address" @if(isset($data['address'])) value="{{ $data['address'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="district">แขวง/ตำบล</label>
                         <div class="flex gap-3">
-                            <input id="district" class="flex-1 w-full" type="text" name="district" @if(isset($data['district'])) value="{{ $data['district'] }}" @endif />
+                            <input id="district" class="flex-1 w-full" type="text" name="district" @if(isset($data['district'])) value="{{ $data['district'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="amphoe">เขต/อำเภอ</label>
                         <div class="flex gap-3">
-                            <input id="amphoe" class="flex-1 w-full" type="text" name="amphoe" @if(isset($data['amphoe'])) value="{{ $data['amphoe'] }}" @endif />
+                            <input id="amphoe" class="flex-1 w-full" type="text" name="amphoe" @if(isset($data['amphoe'])) value="{{ $data['amphoe'] }}" @endif required />
                         </div>
                     </div>
 
                     <div class="flex gap-3">
                         <div class="flex-1">
                             <label htmlFor="province">จังหวัด</label>
-                            <input id="province" class="flex-1 w-full" type="text" name="province" @if(isset($data['province'])) value="{{ $data['province'] }}" @endif />
+                            <input id="province" class="flex-1 w-full" type="text" name="province" @if(isset($data['province'])) value="{{ $data['province'] }}" @endif required />
                         </div>
                         <div class="flex-1">
                             <label htmlFor="zipcode">รหัสไปรษณีย์</label>
-                            <input id="zipcode" class="flex-1 w-full" type="text" name="zipcode" @if(isset($data['zipcode'])) value="{{ $data['zipcode'] }}" @endif />
+                            <input id="zipcode" class="flex-1 w-full" type="text" name="zipcode" @if(isset($data['zipcode'])) value="{{ $data['zipcode'] }}" @endif required />
                         </div>
                     </div>
 
@@ -78,32 +78,32 @@
                     <div>
                         <label htmlFor="address_present">บ้านเลขที่/ชื่อหมู่บ้าน-คอนโด/ถนน</label>
                         <div class="flex gap-3">
-                            <input class="flex-1" type="text" name="address_present" id="address_present" @if(isset($data['address_present'])) value="{{ $data['address_present'] }}" @endif />
+                            <input class="flex-1" type="text" name="address_present" id="address_present" @if(isset($data['address_present'])) value="{{ $data['address_present'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="district">แขวง/ตำบล</label>
                         <div class="flex gap-3">
-                            <input id="district_present" class="flex-1 w-full" type="text" name="district_present" @if(isset($data['district_present'])) value="{{ $data['district_present'] }}" @endif />
+                            <input id="district_present" class="flex-1 w-full" type="text" name="district_present" @if(isset($data['district_present'])) value="{{ $data['district_present'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="amphoe">เขต/อำเภอ</label>
                         <div class="flex gap-3">
-                            <input id="amphoe_present" class="flex-1 w-full" type="text" name="amphoe_present" @if(isset($data['amphoe_present'])) value="{{ $data['amphoe_present'] }}" @endif />
+                            <input id="amphoe_present" class="flex-1 w-full" type="text" name="amphoe_present" @if(isset($data['amphoe_present'])) value="{{ $data['amphoe_present'] }}" @endif required />
                         </div>
                     </div>
 
                     <div class="flex gap-3">
                         <div class="flex-1">
                             <label htmlFor="province">จังหวัด</label>
-                            <input id="province_present" class="flex-1 w-full" type="text" name="province_present" @if(isset($data['province_present'])) value="{{ $data['province_present'] }}" @endif />
+                            <input id="province_present" class="flex-1 w-full" type="text" name="province_present" @if(isset($data['province_present'])) value="{{ $data['province_present'] }}" @endif required />
                         </div>
                         <div class="flex-1">
                             <label htmlFor="zipcode">รหัสไปรษณีย์</label>
-                            <input id="zipcode_present" class="flex-1 w-full" type="text" name="zipcode_present" @if(isset($data['zipcode_present'])) value="{{ $data['zipcode_present'] }}" @endif />
+                            <input id="zipcode_present" class="flex-1 w-full" type="text" name="zipcode_present" @if(isset($data['zipcode_present'])) value="{{ $data['zipcode_present'] }}" @endif required />
                         </div>
                     </div>
 
@@ -159,32 +159,32 @@
                     <div>
                         <label htmlFor="address_delivery">บ้านเลขที่/ชื่อหมู่บ้าน-คอนโด/ถนน</label>
                         <div class="flex gap-3">
-                            <input class="flex-1" type="text" name="address_delivery" id="address_delivery" @if(isset($data['address_delivery'])) value="{{ $data['address_delivery'] }}" @endif />
+                            <input class="flex-1" type="text" name="address_delivery" id="address_delivery" @if(isset($data['address_delivery'])) value="{{ $data['address_delivery'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="district">แขวง/ตำบล</label>
                         <div class="flex gap-3">
-                            <input id="district_delivery" class="flex-1 w-full" type="text" name="district_delivery" @if(isset($data['district_delivery'])) value="{{ $data['district_delivery'] }}" @endif />
+                            <input id="district_delivery" class="flex-1 w-full" type="text" name="district_delivery" @if(isset($data['district_delivery'])) value="{{ $data['district_delivery'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="amphoe">เขต/อำเภอ</label>
                         <div class="flex gap-3">
-                            <input id="amphoe_delivery" class="flex-1 w-full" type="text" name="amphoe_delivery" @if(isset($data['amphoe_delivery'])) value="{{ $data['amphoe_delivery'] }}" @endif />
+                            <input id="amphoe_delivery" class="flex-1 w-full" type="text" name="amphoe_delivery" @if(isset($data['amphoe_delivery'])) value="{{ $data['amphoe_delivery'] }}" @endif required />
                         </div>
                     </div>
 
                     <div class="flex gap-3">
                         <div class="flex-1">
                             <label htmlFor="province">จังหวัด</label>
-                            <input id="province_delivery" class="flex-1 w-full" type="text" name="province_delivery" @if(isset($data['province_delivery'])) value="{{ $data['province_delivery'] }}" @endif />
+                            <input id="province_delivery" class="flex-1 w-full" type="text" name="province_delivery" @if(isset($data['province_delivery'])) value="{{ $data['province_delivery'] }}" @endif required />
                         </div>
                         <div class="flex-1">
                             <label htmlFor="zipcode">รหัสไปรษณีย์</label>
-                            <input id="zipcode_delivery" class="flex-1 w-full" type="text" name="zipcode_delivery" @if(isset($data['zipcode_delivery'])) value="{{ $data['zipcode_delivery'] }}" @endif />
+                            <input id="zipcode_delivery" class="flex-1 w-full" type="text" name="zipcode_delivery" @if(isset($data['zipcode_delivery'])) value="{{ $data['zipcode_delivery'] }}" @endif required />
                         </div>
                     </div>
 

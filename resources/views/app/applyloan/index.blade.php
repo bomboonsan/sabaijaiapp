@@ -36,9 +36,9 @@
                 <div class="mt-10">
                     <a href="{{ route('loan-form1') }}" class="educationBtn">แก้ไข หรือ กรอกใบสมัครต่อ</a>
                 </div>
-                <div class="mt-5">
+                {{-- <div class="mt-5">
                     <a href="{{ route('loan-form1') }}" class="educationBtn">แนบเอกสารเพิ่มเติม</a>
-                </div>
+                </div> --}}
                 @endif
             </div>
         </x-layouts.applyloan>

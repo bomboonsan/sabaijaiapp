@@ -77,4 +77,5 @@ Route::middleware([
     })->name('upload');
 
     Route::get('/backend/users', [BackendUsersController::class, 'index'])->name('backend-users');
+    Route::get('/backend/user/{id}', [BackendUsersController::class, 'show'])->name('backend-user-show');
 });

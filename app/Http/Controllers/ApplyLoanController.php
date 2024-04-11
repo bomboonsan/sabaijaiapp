@@ -111,10 +111,6 @@ class ApplyLoanController extends Controller
     public function form3Submit(Request $request)
     {
         $dataSession = Session::get('applyloan');
-        // dd($dataSession);
-
-        // merge old data applyloan with request->all()
-        $request->session()->put('applyloan', array_merge($request->session()->get('applyloan'), $request->all()));
 
         // ************************************************
         // START KYC
@@ -196,6 +192,16 @@ class ApplyLoanController extends Controller
         $KycID = $resultKYC['proprietors'][0]['verificationRef'];
         $fullUrlKyc = 'https://sabaijaimoney.mac.appmanteam.com/apps/identity-verification/'.$KycID.'?redirect=https://sabaijaiapp.bomboonsan.com/loan/form4';
         // dd($fullUrlKyc);
+
+
+
+        // merge old data applyloan with request->all()
+        $request->session()->put('applyloan', array_merge($request->session()->get('applyloan'), $request->all()));
+
+        // add session key kyc_id to session applyloan
+        $dataSession['ref_appman'] = $KycID;
+        $request->session()->put('applyloan', array_merge($request->session()->get('applyloan'), $dataSession));
+
         return redirect($fullUrlKyc);
 
         // ************************************************
@@ -240,14 +246,22 @@ class ApplyLoanController extends Controller
     {
         $data = Session::get('applyloan');
         $nature_employment = $data['nature_employment'];
-        if ($nature_employment == '1') {
+        $groupt1 = array('1', '2', '3', '4','5','6','7','16');
+        $groupt2 = array('8', '9', '10', '11');
+        $groupt3 = array('12');
+        $groupt4 = array('13', '14', '15','17','18');
+        // if ($nature_employment == '1') {
+        if (in_array($nature_employment, $groupt1)) {
             return view('app.applyloan.form6-type1', ['data' => $data]);
         }
-        if ($nature_employment == '2') {
+        if (in_array($nature_employment, $groupt2)) {
             return view('app.applyloan.form6-type2', ['data' => $data]);
         }
-        if ($nature_employment == '3') {
+        if (in_array($nature_employment, $groupt3)) {
             return view('app.applyloan.form6-type3', ['data' => $data]);
+        }
+        if (in_array($nature_employment, $groupt4)) {
+            return view('app.applyloan.form6-type4', ['data' => $data]);
         } else {
             return view('app.applyloan.form6-type4', ['data' => $data]);
         }
@@ -287,7 +301,8 @@ class ApplyLoanController extends Controller
             return view('app.applyloan.form8');
         }
     }
-    public function form8Submit(Request $request)
+    // public function form8Submit(Request $request)
+    public function form9Submit(Request $request)
     {
         // merge old data applyloan with request->all()
         $request->session()->put('applyloan', array_merge($request->session()->get('applyloan'), $request->all()));
@@ -303,7 +318,8 @@ class ApplyLoanController extends Controller
             return view('app.applyloan.form9');
         }
     }
-    public function form9Submit(Request $request)
+    // public function form9Submit(Request $request)
+    public function form8Submit(Request $request)
     {
         $dataSession = Session::get('applyloan');
 

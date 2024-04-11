@@ -17,3 +17,11 @@
 .disabled {
     @apply bg-[#f21b10]/40 text-white/40;
 }
+
+
+.form-editor {
+    input , select {
+        @apply rounded-lg border-2 border-neutral-600/10 shadow-sm shadow-neutral-800/20;
+        @apply py-1.5 px-2 text-sm mb-3;
+    }
+}

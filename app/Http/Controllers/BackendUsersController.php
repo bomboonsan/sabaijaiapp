@@ -16,4 +16,10 @@ class BackendUsersController extends Controller
         $users = Accounts::orderBy('created_at', 'DESC')->paginate(20);
         return view('backend.users.index' , compact('users'));
     }
+
+    public function show($id)
+    {
+        $user = Accounts::find($id);
+        return view('backend.users.show' , compact('user'));
+    }
 }

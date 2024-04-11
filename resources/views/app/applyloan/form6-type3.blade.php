@@ -22,15 +22,15 @@
                     <div>
                         <label htmlFor="description_work">อธิบายลักษณะงาน</label>
                         <div id="description_work" class="flex gap-3">
-                            <input class="flex-1" type="text" name="description_work" @if(isset($data['description_work'])) value="{{ $data['description_work'] }}" @endif />
+                            <input class="flex-1" type="text" name="description_work" @if(isset($data['description_work'])) value="{{ $data['description_work'] }}" @endif required />
                         </div>
                     </div>
 
-                    ระยะเวลากิจการส่วนตัวนับตั้งแต่คุณดำเนินการ
+                    ประสบการณ์ทำงาน/อายุงาน
                     <div class="flex gap-3 items-end">
                         <div class="flex-auto">
                             <div class="flex items-center gap-3">
-                                <input id="year_work" class="flex-1 w-full" type="number" name="year_work"  @if(isset($data['year_work'])) value="{{ $data['year_work'] }}" @endif />
+                                <input id="year_work" class="flex-1 w-full" type="number" name="year_work"  @if(isset($data['year_work'])) value="{{ $data['year_work'] }}" @endif required />
                                 <label htmlFor="year_work">ปี</label>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
 
                     <div>
                         <label htmlFor="pay_date">วันที่ต้องการชำระค่างวด</label>
-                        <select id="pay_date" class="w-full" name="pay_date">
+                        <select id="pay_date" class="w-full" name="pay_date" required>
                             @for ($i = 1; $i <= 31; $i++)
                             <option value="{{ $i }}" @if(isset($data['pay_date']) && $data['pay_date'] == $i) selected @endif>{{ $i }}</option>
                             @endfor
@@ -56,25 +56,25 @@
                     <div>
                         <label htmlFor="district_work">แขวง/ตำบล</label>
                         <div class="flex gap-3">
-                            <input id="district_work" class="flex-1 w-full" type="text" name="district_work" @if(isset($data['district_work'])) value="{{ $data['district_work'] }}" @endif />
+                            <input id="district_work" class="flex-1 w-full" type="text" name="district_work" @if(isset($data['district_work'])) value="{{ $data['district_work'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="amphoe_work">เขต/อำเภอ</label>
                         <div class="flex gap-3">
-                            <input id="amphoe_work" class="flex-1 w-full" type="text" name="amphoe_work" @if(isset($data['amphoe_work'])) value="{{ $data['amphoe_work'] }}" @endif />
+                            <input id="amphoe_work" class="flex-1 w-full" type="text" name="amphoe_work" @if(isset($data['amphoe_work'])) value="{{ $data['amphoe_work'] }}" @endif required />
                         </div>
                     </div>
 
                     <div class="flex gap-3">
                         <div class="flex-1">
                             <label htmlFor="province_work">จังหวัด</label>
-                            <input id="province_work" class="flex-1 w-full" type="text" name="province_work" @if(isset($data['province_work'])) value="{{ $data['province_work'] }}" @endif />
+                            <input id="province_work" class="flex-1 w-full" type="text" name="province_work" @if(isset($data['province_work'])) value="{{ $data['province_work'] }}" @endif required />
                         </div>
                         <div class="flex-1">
                             <label htmlFor="zipcode_work">รหัสไปรษณีย์</label>
-                            <input id="zipcode_work" class="flex-1 w-full" type="text" name="zipcode_work" @if(isset($data['zipcode_work'])) value="{{ $data['zipcode_work'] }}" @endif />
+                            <input id="zipcode_work" class="flex-1 w-full" type="text" name="zipcode_work" @if(isset($data['zipcode_work'])) value="{{ $data['zipcode_work'] }}" @endif required />
                         </div>
                     </div>
 

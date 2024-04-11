@@ -25,13 +25,13 @@
                     <div>
                         <label htmlFor="reference_name">ชื่อ - นามสกุล</label>
                         <div id="reference_name" class="flex gap-3">
-                            <input class="flex-1" type="text" name="reference_name"  @if(isset($data['reference_name'])) value="{{ $data['reference_name'] }}" @endif />
+                            <input class="flex-1" type="text" name="reference_name"  @if(isset($data['reference_name'])) value="{{ $data['reference_name'] }}" @endif required />
                         </div>
                     </div>
 
                     <div>
                         <label htmlFor="reference_type">ความสัมพันธ์</label>
-                        <select id="reference_type" class="w-full" name="reference_type">
+                        <select id="reference_type" class="w-full" name="reference_type" required>
                             <option value="0" @if(isset($data['reference_type']) && $data['reference_type'] == '0') selected @endif>บิดา/มารดา</option>
                             <option value="1" @if(isset($data['reference_type']) && $data['reference_type'] == '1') selected @endif>พี่/น้อง ร่วมบิดามารดา</option>
                             <option value="2" @if(isset($data['reference_type']) && $data['reference_type'] == '2') selected @endif>ปู่/ย่า/ตา/ยาย</option>
@@ -43,7 +43,7 @@
                     <div>
                         <label htmlFor="reference_tel">เบอร์มือถือ</label>
                         <div id="reference_tel" class="flex gap-3">
-                            <input class="flex-1" type="tel" name="reference_tel" @if(isset($data['reference_tel'])) value="{{ $data['reference_tel'] }}" @endif />
+                            <input class="flex-1" type="tel" name="reference_tel" @if(isset($data['reference_tel'])) value="{{ $data['reference_tel'] }}" @endif required />
                         </div>
                     </div>
 
